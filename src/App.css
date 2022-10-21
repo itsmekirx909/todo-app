@@ -1,0 +1,264 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.mainbox{
+  position: relative;
+  height: 520px;
+  width: 480px;
+  background-color: rgb(2, 0, 15);
+  border-radius: 10px;
+  overflow: hidden;
+  animation: scale 1s;
+  z-index: 2;
+}
+
+@keyframes scale{
+  0%{
+transform: scale(0);
+  }
+  100%{
+transform: scale(1);
+  }
+}
+
+
+.mainbox::before{
+  content: '';
+  position: absolute;
+  height: 520px;
+  width: 450px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  top: -50%;
+  left: 0;
+  transform-origin: bottom;
+  animation: animate 6s linear infinite;
+}
+
+.mainbox::after{
+  content: '';
+  position: absolute;
+  height: 520px;
+  width: 380px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  top: -50%;
+  left: 0;
+  transform-origin: bottom;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate{
+  0%{
+transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+
+  }
+}
+
+.tobox{
+  position: absolute;
+  inset: 2px;
+  z-index: 10;
+  background: #1b1e24;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.head{
+  color: #45f3ff;
+  letter-spacing: 0.1em;
+}
+
+.inpbox{
+  margin: 40px auto;
+  position: relative;
+  width: 300px;
+}
+
+.inp{
+  width: 100%;
+  padding: 10px 5px 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #cfeaec;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
+.inpbox span{
+  position: absolute;
+  left: 3%;
+  padding: 10px 5px 5px;
+  font-size: 1em;
+  color: #8f8f8f;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  top: -10%;
+}
+
+.inpbox .inp:focus ~ span,
+.inpbox input:valid ~ span
+{
+  color: #45f3ff;
+  transform: translateY(-18px) translateX(-15px);
+  font-size: 0.75em;
+}
+
+.inpbox .dd{
+height: 2px;
+background: #45f3ff;
+pointer-events: none;
+transition: 0.5s;
+transform: scaleX(0);
+}
+
+.inpbox .inp:focus ~ div,
+.inpbox input:valid ~ div
+{
+transform: scaleX(1);
+}
+
+.btn1{
+  margin: 0px 5px;
+  margin-top: 18px;
+  padding: 10px 20px;
+  font-size: 0.7em;
+  border-radius: 8px;
+  font-weight: bolder;
+  border: none;
+  background: #45f3ff;
+  color: #1b1e24;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn1:hover{
+  background: transparent;
+  color: #45f3ff;
+  box-shadow: 0px 0px 20px #45f3ff,
+  0px 0px 20px #45f3ff,
+  0px 0px 20px #45f3ff,
+  0px 0px 20px #45f3ff;
+}
+
+ul{
+  position: relative;
+}
+
+li{
+  position: relative;
+  list-style: none;
+  margin-top: 10px;
+  left: -20px;
+  color: #cfeaec;
+  animation: slide 1s;
+  transition: 1s;
+}
+
+@keyframes slide{
+  0%{
+    opacity: 0;
+transform: translateX(-80px);
+  }
+  100%{
+    opacity: 1;
+transform: translateX(0);
+  }
+}
+
+.btn2{
+  position: relative;
+  margin-top: 18px;
+  padding: 5px 10px;
+  font-size: 0.5em;
+  border-radius: 8px;
+  font-weight: bolder;
+  border: none;
+  background: #45f3ff;
+  color: #1b1e24;
+  cursor: pointer;
+  left: -20px;
+  margin: 0px 5px;
+animation: fade 1s;
+}
+
+@keyframes fade{
+  0%{
+opacity: 0;
+  }
+  100%{
+opacity: 1;
+  }
+}
+
+.logsig{
+margin: 10px 0px;
+font-size: medium;
+}
+
+.sign{
+  cursor: pointer;
+  transition: 0.2s;
+}
+.sign:hover{
+  color: #45f3ff;
+}
+
+
+
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #45f3ff;
+  margin-block: 0.5em;
+  border-radius: 8px;
+
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #34b8c2;
+}
+
